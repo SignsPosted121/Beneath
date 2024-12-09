@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 public class MapScript : MonoBehaviour
 {
@@ -102,8 +102,8 @@ public class MapScript : MonoBehaviour
 		Color currentColor = morning + day + evening + night;
 		float currentIntensity = Mathf.Clamp01(morningInt + dayInt + eveningInt + nightInt);
 
-		sun.GetComponent<Light2D>().color = currentColor;
-		sun.GetComponent<Light2D>().intensity = currentIntensity;
+		sun.GetComponent<UnityEngine.Rendering.Universal.Light2D>().color = currentColor;
+		sun.GetComponent<UnityEngine.Rendering.Universal.Light2D>().intensity = currentIntensity;
 	}
 
 	private bool TestGround(MapAIUnit enemy, Vector2 dir)
